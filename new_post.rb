@@ -1,5 +1,5 @@
 # encoding: utf-8
-# Программа "Блокнот" Версия 3.0, добавлен вид записи Твит, который автоматически постит себя в твитер
+# Программа "Блокнот" Версия 3.0, добавлен вид записи Твит, который автоматически постит себя в твиттер
 # Этот скрипт создает новые записи, чтением занимается другой скрипт
 
 # XXX/ Этот код необходим только при использовании русских букв на Windows
@@ -14,11 +14,11 @@ end
 # /XXX
 
 # Подключаем класс Post и его детей
-require_relative 'post.rb'
-require_relative 'memo.rb'
-require_relative 'tweet.rb'
-require_relative 'link.rb'
-require_relative 'task.rb'
+require_relative 'lib/post.rb'
+require_relative 'lib/memo.rb'
+require_relative 'lib/tweet.rb'
+require_relative 'lib/link.rb'
+require_relative 'lib/task.rb'
 
 # Вывожу приветствие)
 puts "Привет, я блокнот версия 2, записываю новые записи в базу SQLite :)"

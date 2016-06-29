@@ -9,7 +9,7 @@ require 'time'
 class Post
 
   # создаю статическое поле класса
-  @@SQLITE_DB_FILE = 'notepad.sqlite'
+  @@SQLITE_DB_FILE = 'data/notepad.sqlite'
 
   # updated in v. 2
   # теперь нужно будет читать объекты из базы данных

@@ -5,8 +5,8 @@
 require 'rspec'
 
 # Подключаю классы Post и Task (просто Task недостаточно, т.к. он наследуется от Post)
-require_relative '../post'
-require_relative '../task'
+require_relative '../lib/post'
+require_relative '../lib/task'
 
 describe 'Task' do
   # # объявляю переменную task - в ней будет класс Memo

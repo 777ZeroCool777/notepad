@@ -19,14 +19,21 @@ class Tweet < Post
   end
 
 
-
   def read_from_console
-    puts 'Новый твит (140 символов!):'
-    @text = STDIN.gets.chomp[0..140]
+    begin
+      puts 'Новый твит (140 символов!):'
+      @text = STDIN.gets.chomp[0..140]
 
-    puts "Отправляем ваш твит: #{@text.encode('utf-8')}"
-    @@CLIENT.update(@text.encode('utf-8'))
-    puts 'Твит отправлен.'
+      puts "Отправляем ваш твит: #{@text.encode('utf-8')}"
+      @@CLIENT.update(@text.encode('utf-8'))
+      puts 'Твит отправлен.'
+    rescue Twitter::Error
+      abort "Нет сети"
+    rescue Twitter::Error::Unauthorized => e
+      puts "Не правильно заданы ключи в lib/tweet.rb"
+      abort e.message
+    end
+
   end
 
   # Массив из даты создания + тело твита
@@ -47,7 +54,7 @@ class Tweet < Post
     )
   end
 
-# загружаю свои поля из хэш массива
+  # загружаю свои поля из хэш массива
   def load_data(data_hash)
     super(data_hash) # сперва дергаю родительский метод для общих полей
 

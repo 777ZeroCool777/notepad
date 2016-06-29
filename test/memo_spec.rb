@@ -5,8 +5,8 @@
 require 'rspec'
 
 # подключаю post и memo
-require '../post.rb' # (Родительский класс) нужен для работы с классом Memo
-require '../memo.rb'
+require '../lib/post.rb' # (Родительский класс) нужен для работы с классом Memo
+require '../lib/memo.rb'
 
 describe 'Memo' do
 

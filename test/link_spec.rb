@@ -5,8 +5,8 @@
 require 'rspec'
 
 # Подключаю классы Post и Link
-require_relative '../post' # post неообходим для работы с link
-require_relative '../link'
+require_relative '../lib/post' # post неообходим для работы с link
+require_relative '../lib/link'
 
 describe 'Link' do
   # Первый тест будет проверять метод to_db_hash
