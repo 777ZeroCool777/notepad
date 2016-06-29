@@ -27,8 +27,6 @@ class Tweet < Post
       puts "Отправляем ваш твит: #{@text.encode('utf-8')}"
       @@CLIENT.update(@text.encode('utf-8'))
       puts 'Твит отправлен.'
-    rescue Twitter::Error
-      abort "Нет сети"
     rescue Twitter::Error::Unauthorized => e
       puts "Не правильно заданы ключи в lib/tweet.rb"
       abort e.message
