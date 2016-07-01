@@ -5,8 +5,8 @@
 require 'rspec'
 
 # подключаю post и memo
-require '../lib/post.rb' # (Родительский класс) нужен для работы с классом Memo
-require '../lib/memo.rb'
+require_relative '../lib/post.rb' # (Родительский класс) нужен для работы с классом Memo
+require_relative '../lib/memo.rb'
 
 describe 'Memo' do
 
@@ -35,7 +35,7 @@ describe 'Memo' do
 
     memo_string = memo.to_strings
 
-    # должно вернуть дату создания (и 2 отступа ;) и текст заметки
+    # должно вернуть дату создания
     expect(memo_string[0]).to eq "Создано: 2016.06.23, 00:43:00 \n\r \n\r"
     expect(memo_string[1]).to eq 'Хорошая заметка'
   end

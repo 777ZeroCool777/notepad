@@ -5,7 +5,7 @@
 require 'rspec'
 
 # подключаю post
-require '../lib/post.rb'
+require_relative '../lib/post.rb'
 
 describe 'Post' do
 
